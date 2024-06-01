@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		SQLAlchemy | 
+	 
+	予早 Blog
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/yuzaoyah/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/yuzaoyah/js/main.js"></script>
+
+
+	
+	
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/yuzaoyah/" class="logo">予早 Blog</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+  
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Aramak için Enter&#39;a basın">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ComputerLanguage
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Python
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										1.语言基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/27/ComputerLanguage/Python/1.%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%B3%A8%E9%87%8A/">
+                     
+										    注释
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										DatabaseSystem
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MySQL
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										client
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/27/DatabaseSystem/MySQL/client/Flask-SQLAlchemy/">
+                     
+										    Flask-SQLAlchemy
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/27/DatabaseSystem/MySQL/client/PyMySQL/">
+                     
+										    PyMySQL
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/yuzaoyah/2024/05/26/DatabaseSystem/MySQL/client/SQLAlchemy/">
+                     
+										    SQLAlchemy
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/27/README/">
+                     
+										    README
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Tool
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/26/Tool/Hexo/">
+                     
+										    Hexo
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										WebDevelopment
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/30/WebDevelopment/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/">
+                     
+										    接口设计
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/yuzaoyah/2024/05/27/WebDevelopment/%E6%95%B0%E6%8D%AE%E5%88%86%E9%A1%B5%E6%96%B9%E5%BC%8F/">
+                     
+										    数据分页方式
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	SQLAlchemy
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>予早</span>
+	<span>2024-05-26 22:19:36</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>pip</p>
+<pre><code>pip install sqlalchemy
+</code></pre>
+<p>版本</p>
+<pre><code>import sqlalchemy
+
+print(sqlalchemy.__version__)
+# 2.0.30
+</code></pre>
+<h2 id="Engine"><a href="#Engine" class="headerlink" title="Engine"></a>Engine</h2><p>连接池+数据库dialect</p>
+<pre><code class="reStructuredText">Connects a :class:`~sqlalchemy.pool.Pool` and
+:class:`~sqlalchemy.engine.interfaces.Dialect` together to provide a
+source of database connectivity and behavior.
+</code></pre>
+<pre><code class="python">from sqlalchemy import create_engine
+
+engine = create_engine(&quot;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&quot;)
+</code></pre>
+<h2 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h2><p>调用DBAPI与数据库进行交互</p>
+<pre><code class="python">from sqlalchemy import create_engine
+
+engine = create_engine(&quot;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&quot;)
+
+from sqlalchemy import text
+
+with engine.connect() as conn:
+    result = conn.execute(text(&quot;select &#39;hello world&#39;&quot;))
+    print(result.all())
+    # conn.scalar()
+    # conn.scalars()
+    
+with engine.connect() as conn:
+    conn.execute(text(&quot;CREATE TABLE some_table (x int, y int)&quot;))
+    conn.execute(
+        text(&quot;INSERT INTO some_table (x, y) VALUES (:x, :y)&quot;),
+        [&#123;&quot;x&quot;: 1, &quot;y&quot;: 1&#125;, &#123;&quot;x&quot;: 2, &quot;y&quot;: 4&#125;],
+    )
+    conn.commit()
+
+with engine.begin() as conn:
+    conn.execute(
+        text(&quot;INSERT INTO some_table (x, y) VALUES (:x, :y)&quot;),
+        [&#123;&quot;x&quot;: 6, &quot;y&quot;: 8&#125;, &#123;&quot;x&quot;: 9, &quot;y&quot;: 10&#125;],
+    )
+</code></pre>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>auto_flush</p>
+<p>若auto_flush为True，所有查询操作执行之前会先执行Session.flush()</p>
+<p>基于connection，管理ORM映射对象（ORM-mapped object）的相关操作。</p>
+<pre><code class="python">from sqlalchemy import create_engine
+
+engine = create_engine(&quot;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&quot;)
+
+# 1. 直接创建session
+from sqlalchemy.orm import Session
+
+session = Session(bind=engine)
+
+# 2.通过sessionmaker创建session
+# 2.1.sessionmaker绑定engine
+from sqlalchemy.orm import sessionmaker
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+# 2.2.Session绑定engine
+Session = sessionmaker()
+Session.configure(bind=engine)
+session = Session()
+
+# 3.线程安全的session
+from sqlalchemy.orm import scoped_session
+
+ScopedSession = scoped_session(session_factory=sessionmaker(bind=engine))
+session = ScopedSession()
+</code></pre>
+<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><h3 id="ORM-Mapping-Style"><a href="#ORM-Mapping-Style" class="headerlink" title="ORM Mapping Style"></a>ORM Mapping Style</h3><pre><code># CORE
+# Table 对应数据库中的表
+# Metadata 定义表时指定metedata
+
+# 指令式
+# Table 对应数据库中的表
+# Metadata 定义表时指定metedata
+# ORM mapped object
+# registry   ORM mapped class 与 Table的映射
+
+# 声明式
+# 等价于指令式
+</code></pre>
+<h4 id="Imperative-Mapping"><a href="#Imperative-Mapping" class="headerlink" title="Imperative Mapping"></a>Imperative Mapping</h4><pre><code class="python">from sqlalchemy import Table, Column, Integer, String, ForeignKey
+from sqlalchemy.orm import registry
+
+mapper_registry = registry()
+
+user_table = Table(
+    &quot;user&quot;,
+    mapper_registry.metadata,
+    Column(&quot;id&quot;, Integer, primary_key=True),
+    Column(&quot;name&quot;, String(50)),
+    Column(&quot;fullname&quot;, String(50)),
+    Column(&quot;nickname&quot;, String(12)),
+)
+
+
+class User:
+    pass
+
+
+mapper_registry.map_imperatively(User, user_table)
+</code></pre>
+<h4 id="Declarative-Mapping"><a href="#Declarative-Mapping" class="headerlink" title="Declarative Mapping"></a>Declarative Mapping</h4><p>1版本的声明风格</p>
+<pre><code class="python">import sqlalchemy
+from sqlalchemy import Column, Integer, String, create_engine, ForeignKey, and_, or_, not_, distinct
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session, declarative_base
+from sqlalchemy.sql import func, text
+
+engine = create_engine(&#39;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&#39;, echo=&#39;debug&#39;, echo_pool=&#39;debug&#39;)
+ScopedSession = scoped_session(sessionmaker(bind=engine))
+
+Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = &#39;t_user&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(length=20))
+    age = Column(Integer())
+    addresses = relationship(&#39;Address&#39;)
+
+    def __repr__(self):
+        return f&quot;User(id=&#123;self.id&#125;, name=&#123;self.name&#125;, age=&#123;self.age&#125;, addresses=&#123;self.addresses&#125;)&quot;
+
+
+class Address(Base):
+    __tablename__ = &#39;t_address&#39;
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey(&#39;t_user.id&#39;))
+    country = Column(String(length=30))
+    province = Column(String(length=30))
+    city = Column(String(length=30))
+    detail = Column(String(length=150))
+
+    def __repr__(self):
+        return f&quot;Address(id=&#123;self.id&#125;, user_id=&#123;self.user_id&#125;, country=&#123;self.country&#125;, province=&#123;self.province&#125;, city=&#123;self.city&#125;, detail=&#123;self.detail&#125;)&quot;
+</code></pre>
+<p>2版本风格</p>
+<pre><code class="python">from typing import List
+
+from sqlalchemy import ForeignKey, String, Integer, create_engine
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker, scoped_session
+
+engine = create_engine(&#39;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&#39;, echo=&#39;debug&#39;, echo_pool=&#39;debug&#39;)
+ScopedSession = scoped_session(sessionmaker(bind=engine))
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class User(Base):
+    __tablename__ = &quot;t_user&quot;
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str] = mapped_column(String(30))
+    age: Mapped[int] = mapped_column(Integer())
+    addresses: Mapped[List[&quot;Address&quot;]] = relationship(
+        back_populates=&quot;user&quot;, cascade=&quot;all, delete-orphan&quot;
+    )
+
+    def __repr__(self) -&gt; str:
+        return f&quot;User(id=&#123;self.id!r&#125;, name=&#123;self.name!r&#125;, age=&#123;self.age!r&#125;)&quot;
+
+
+class Address(Base):
+    __tablename__ = &quot;address&quot;
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey(&quot;t_user.id&quot;))
+    country: Mapped[str] = mapped_column(String(30))
+    province: Mapped[str] = mapped_column(String(30))
+    city: Mapped[str] = mapped_column(String(30))
+    detail: Mapped[str] = mapped_column(String(100))
+    user: Mapped[&quot;User&quot;] = relationship(back_populates=&quot;addresses&quot;)
+
+    def __repr__(self) -&gt; str:
+        return (f&quot;Address(id=&#123;self.id!r&#125;, user_id=&#123;self.user_id!r&#125;, country=&#123;self.country!r&#125;, &quot;
+                f&quot;province=&#123;self.province!r&#125;, city=&#123;self.city!r&#125;, detail=&#123;self.detail!r&#125;)&quot;)
+</code></pre>
+<p>通过metadata在数据库创建表和删除表</p>
+<pre><code class="python"># 通过metadata创建表或者删除表
+# 删除所有模型类创建的表
+Base.metadata.drop_all(engine)
+# 创建所有模型类的表格，有则不创建
+Base.metadata.create_all(engine)
+</code></pre>
+<h2 id="ORM-Mapped-Object"><a href="#ORM-Mapped-Object" class="headerlink" title="ORM Mapped Object"></a>ORM Mapped Object</h2><h3 id="object-state"><a href="#object-state" class="headerlink" title="object state"></a>object state</h3><p><a target="_blank" rel="noopener" href="https://docs.sqlalchemy.org/en/20/orm/session_events.html#object-lifecycle-events">https://docs.sqlalchemy.org/en/20/orm/session_events.html#object-lifecycle-events</a></p>
+<h4 id="Transient"><a href="#Transient" class="headerlink" title="Transient"></a>Transient</h4><ul>
+<li><p>不在session中</p>
+</li>
+<li><p>未保存到数据库（例如没有数据库id）</p>
+</li>
+</ul>
+<p>新创建的对象即为transient状态</p>
+<pre><code>user = User(name=&#39;davis&#39;)
+</code></pre>
+<h4 id="Pending"><a href="#Pending" class="headerlink" title="Pending"></a>Pending</h4><ul>
+<li>在session中</li>
+<li>有增加或更新操作但未flush到数据库</li>
+</ul>
+<p>session.add()会使得对象变为pending状态</p>
+<pre><code>session.add(user)
+</code></pre>
+<h4 id="Persistent"><a href="#Persistent" class="headerlink" title="Persistent"></a>Persistent</h4><ul>
+<li>在session中</li>
+<li>数据库中有记录</li>
+</ul>
+<p>将pending状态的对象flush到数据库可以获得persistent状态的对象</p>
+<pre><code>session.flush(user)
+</code></pre>
+<p>从数据库中查询可以获得persistent状态的对象</p>
+<pre><code>
+</code></pre>
+<p>将persistent对象从其他session中启动到当前session</p>
+<pre><code>
+</code></pre>
+<h4 id="Deleted"><a href="#Deleted" class="headerlink" title="Deleted"></a>Deleted</h4><ul>
+<li><p>在session中</p>
+</li>
+<li><p>有删除操作且flush到数据库，但事务未提交</p>
+</li>
+</ul>
+<p>事务提交时，该状态对象会转变为detached状态</p>
+<p>事务回滚时，该状态对象会转变为persistent状态</p>
+<h4 id="Detached"><a href="#Detached" class="headerlink" title="Detached"></a>Detached</h4><ul>
+<li>不在session中</li>
+<li>与数据库中的记录相对应或以前相对应</li>
+</ul>
+<p>detached状态的对象将包含数据库id等信息，但由于它与会话无关，不能保证这些信息就是当前数据库中的信息，detached状态的对象可以安全地正常使用，除了对象无法加载未加载的属性、懒加载的属性（relationship()）或以前标记为“过期”的属性。</p>
+<h3 id="inspect-object"><a href="#inspect-object" class="headerlink" title="inspect object"></a>inspect object</h3><pre><code class="python">import sqlalchemy
+from sqlalchemy import Column, Integer, String, create_engine, ForeignKey, and_, or_, not_, distinct, inspect
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session, declarative_base, InstanceState
+from sqlalchemy.sql import func, text
+
+engine = create_engine(&#39;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&#39;, echo=&#39;debug&#39;, echo_pool=&#39;debug&#39;)
+ScopedSession = scoped_session(sessionmaker(bind=engine))
+
+Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = &#39;t_user&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(length=20))
+    age = Column(Integer())
+    addresses = relationship(&#39;Address&#39;)
+
+    def __repr__(self):
+        return f&quot;User(id=&#123;self.id&#125;, name=&#123;self.name&#125;, age=&#123;self.age&#125;, addresses=&#123;self.addresses&#125;)&quot;
+
+
+class Address(Base):
+    __tablename__ = &#39;t_address&#39;
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey(&#39;t_user.id&#39;))
+    country = Column(String(length=30))
+    province = Column(String(length=30))
+    city = Column(String(length=30))
+    detail = Column(String(length=150))
+
+    def __repr__(self):
+        return f&quot;Address(id=&#123;self.id&#125;, user_id=&#123;self.user_id&#125;, country=&#123;self.country&#125;, province=&#123;self.province&#125;, city=&#123;self.city&#125;, detail=&#123;self.detail&#125;)&quot;
+
+
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
+
+user = User(name=&quot;yuzao&quot;)
+insp: InstanceState = inspect(user)
+print(type(insp), insp.transient)
+</code></pre>
+<h3 id="object-state、expired、flush分析"><a href="#object-state、expired、flush分析" class="headerlink" title="object state、expired、flush分析"></a>object state、expired、flush分析</h3><p>Session.flush()</p>
+<ul>
+<li>与数据库交互，执行SQL</li>
+<li>session中所有object置为persistent状态</li>
+</ul>
+<p>Session.commit()</p>
+<ul>
+<li>当前事务被提交</li>
+<li>session中所有object置为persistent状态，并且置所有object为expired（可以由Session.expire_on_commit）</li>
+</ul>
+<p>Session.rollback()</p>
+<ul>
+<li>当前事务被回滚</li>
+<li>session中所有object被expired（下次访问object属性时会懒加载select查询）</li>
+</ul>
+<p>Session.close()</p>
+<ul>
+<li>若当前事务未提交，则Session.rollback()</li>
+<li>释放连接资源回到连接池</li>
+<li>session中所有object被清理并置为detached状态，object是否expired取决于Session.commit()还是Session.rollback()</li>
+</ul>
+<pre><code class="python">from sqlalchemy import Column, Integer, String, create_engine, ForeignKey, inspect, select
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session, InstanceState, declarative_base
+
+engine = create_engine(&#39;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/ye_cao_edu?charset=utf8mb4&#39;, echo=&#39;debug&#39;,
+                       echo_pool=&#39;debug&#39;)
+Base = declarative_base()
+ScopedSession = scoped_session(sessionmaker(bind=engine, autoflush=True))
+
+
+class User(Base):
+    __tablename__ = &#39;t_user&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(length=20))
+    addresses = relationship(&#39;Address&#39;)
+
+
+class Address(Base):
+    __tablename__ = &#39;t_address&#39;
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey(&#39;t_user.id&#39;))
+    detail = Column(String(length=20))
+
+
+session = ScopedSession()
+
+user1 = User(name=&quot;yuzao&quot;)
+address1 = Address(user_id=1, detail=&quot;nothing&quot;)
+print(&#39;in session&#39;, user1 in session)
+
+insp: InstanceState = inspect(user1)
+print(&#39;transient&#39;, insp.transient)
+
+session.add(user1)
+session.add(user1)  # 多次add同一个对象只会保留最后一次操作，而不会操作两次
+session.add_all([address1])
+print(&#39;in session&#39;, user1 in session)
+print(&#39;pending&#39;, insp.pending)
+
+# add的object保存在identity_map中
+print(&quot;identity_set&quot;, session.new)
+print(&quot;identity_map&quot;, session._new)
+
+# 在此处才真正和数据库交互执行SQL
+session.flush()
+
+print(&#39;persistent&#39;, insp.persistent)
+
+# 执行SQL之后可以i获取到id
+print(user1.id, address1.id)
+
+user2 = User(name=&quot;alice&quot;)
+session.add(user2)
+
+# 查询会触发autoflush，但由于入参user2.id为None，flush之后user2.id才变为真正地id，所以执行SQL时id依然根据None查询
+user2_from_db_by_get = session.get(User, user2.id)
+print(user2_from_db_by_get, user2.id)
+
+# 修改值，即使实质上没有修改
+user1.name = &quot;davis&quot;
+print(insp.persistent)
+print(&quot;identity_set&quot;, session.dirty)
+
+user1.name = &quot;jack&quot;
+name_from_db_by_execute = session.execute(select(User.name).where(User.id == user1.id)).scalar_one()
+print(user1.name, name_from_db_by_execute)
+
+# delete本身不会触发数据库操作
+session.delete(user1)
+print(&#39;persistent&#39;, insp.persistent)
+print(&quot;identity_set&quot;, session.deleted)
+print(&quot;identity_map&quot;, session._deleted)
+
+# 触发数据库操作，然后object state更改
+session.flush()
+print(&#39;deleted&#39;, insp.deleted)
+
+print(session.expire_on_commit)
+session.commit()
+print(&#39;detached&#39;, insp.detached)
+print(&#39;expired&#39;, insp.expired)
+
+user2 = User(name=&quot;frank&quot;)
+user3 = User(name=&quot;jane&quot;)
+user4 = User(name=&quot;black&quot;)
+session.add_all([user2, user3, user4])
+session.commit()
+
+user1 = User(name=&quot;eric&quot;)
+session.add(user1)
+
+user2.name = &quot;llll&quot;
+
+user3_from_db_by_get = session.get(User, user3.id)
+print(user3 == user3_from_db_by_get)
+
+session.delete(user4)
+session.commit()
+
+print(inspect(user1).expired)  # True
+print(inspect(user2).expired)  # True
+print(inspect(user3).expired)  # True
+print(inspect(user4).expired)  # False
+
+user2 = User(name=&quot;frank&quot;)
+user3 = User(name=&quot;jane&quot;)
+user4 = User(name=&quot;black&quot;)
+session.add_all([user2, user3, user4])
+session.commit()
+
+user1 = User(name=&quot;eric&quot;)
+session.add(user1)
+
+user2.name = &quot;llll&quot;
+
+user3_from_db_by_get = session.get(User, user3.id)
+print(user3 == user3_from_db_by_get)
+
+session.delete(user4)
+session.rollback()
+
+print(inspect(user1).expired)  # False
+print(inspect(user2).expired)  # True
+print(inspect(user3).expired)  # True
+print(inspect(user4).expired)  # True
+</code></pre>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><pre><code>Session.add()
+Session.add_all()
+Session.get()
+Session.delete()
+Session.query()
+Session.execute()
+</code></pre>
+<pre><code class="python">import sqlalchemy
+from sqlalchemy import Column, Integer, String, create_engine, ForeignKey, and_, or_, not_, distinct
+from sqlalchemy.orm import sessionmaker, relationship, scoped_session, declarative_base
+from sqlalchemy.sql import func, text
+
+engine = create_engine(&#39;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&#39;, echo=&#39;debug&#39;, echo_pool=&#39;debug&#39;)
+Base = declarative_base()
+ScopedSession = scoped_session(sessionmaker(bind=engine))
+
+
+class User(Base):
+    __tablename__ = &#39;t_user&#39;
+    id = Column(Integer, primary_key=True)
+    name = Column(String(length=20))
+    age = Column(Integer())
+    addresses = relationship(&#39;Address&#39;)
+
+    def __repr__(self):
+        return f&quot;User(id=&#123;self.id&#125;, name=&#123;self.name&#125;, age=&#123;self.age&#125;, addresses=&#123;self.addresses&#125;)&quot;
+
+
+class Address(Base):
+    __tablename__ = &#39;t_address&#39;
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey(&#39;t_user.id&#39;))
+    country = Column(String(length=30))
+    province = Column(String(length=30))
+    city = Column(String(length=30))
+    detail = Column(String(length=150))
+
+    def __repr__(self):
+        return f&quot;Address(id=&#123;self.id&#125;, user_id=&#123;self.user_id&#125;, country=&#123;self.country&#125;, province=&#123;self.province&#125;, city=&#123;self.city&#125;, detail=&#123;self.detail&#125;)&quot;
+
+
+Base.metadata.drop_all(engine)
+Base.metadata.create_all(engine)
+</code></pre>
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><pre><code class="python">def add_example():
+    session = ScopedSession()
+    try:
+        user1 = User(name=&#39;Jack&#39;, age=14)  # update_example、delete_example
+        session.add(user1)
+
+        user2 = User(name=&#39;Bob&#39;, age=17)
+        user3 = User(name=&#39;Alex&#39;, age=26)
+        user4 = User(name=&#39;Frank&#39;, age=23)
+        # 并非批量操作，实质为循环调用Session.add()
+        session.add_all([user2, user3, user4])
+
+        session.flush()
+        address4 = Address(id=user4.id, country=&quot;China&quot;, province=&quot;Beijing&quot;, city=&quot;Beijing&quot;, detail=&quot;......&quot;)
+        session.add(address4)
+        session.commit()
+    except Exception as e:
+        print(e)
+        session.rollback()
+    finally:
+        session.close()
+
+
+add_example()
+</code></pre>
+<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><pre><code class="python">def update_example1():
+    session = ScopedSession()
+    try:
+        # 先查询出来再更新，两次数据库操作
+        user = session.query(User).filter_by(id=1).first()
+        if user:
+            user.name = &#39;update_example1&#39;
+        session.commit()
+    except Exception as e:
+        print(e)
+        session.rollback()
+    finally:
+        session.close()
+
+
+update_example1()
+
+
+def update_example2():
+    session = ScopedSession()
+    try:
+        # 直接更新，一次数据库操作
+        update_count = session.query(User).filter_by(id=1).update(&#123;User.name: &#39;update_example2&#39;&#125;)
+        print(f&quot;更新了&#123;update_count&#125;条数据&quot;)
+        session.commit()
+    except Exception as e:
+        print(e)
+        session.rollback()
+    finally:
+        session.close()
+
+
+update_example2()
+</code></pre>
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><pre><code class="python">def delete_example1():
+    session = ScopedSession()
+    try:
+        # 先查询出来再删除，两次数据库操作
+        del_data = session.query(User).filter_by(id=1).first()
+        session.delete(del_data)
+        session.commit()
+    except Exception as e:
+        print(e)
+        session.rollback()
+    finally:
+        session.close()
+
+
+delete_example1()
+
+
+def delete_example2():
+    session = ScopedSession()
+    try:
+        # 直接删除，一次数据库操作
+        del_count = session.query(User).filter_by(id=1).delete()
+        print(f&quot;删除了&#123;del_count&#125;条数据&quot;)
+        session.commit()
+    except Exception as e:
+        print(e)
+        session.rollback()
+    finally:
+        session.close()
+
+
+delete_example2()
+</code></pre>
+<h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><pre><code class="python">def get_example1():
+    &quot;&quot;&quot;
+    根据id查询数据
+    &quot;&quot;&quot;
+    session = ScopedSession()
+
+    # Session.get()获取不到返回None
+    print(session.get(User, 2))
+
+    # Session.get_one()获取不到抛出异常
+    print(session.get_one(User, 3))
+
+    # 基于Query的get，2.0版本建议使用session.get()
+    print(session.query(User).get(4))
+    # query().get()不允许查询指定字段、复杂条件等语法
+    # session.query(User.name, User.age).get(4)
+    # session.query(User).filter(User.id != 4).get(4)
+
+
+get_example1()
+
+
+def get_example2():
+    &quot;&quot;&quot;
+    通过Query构造查询，指定字段
+    &quot;&quot;&quot;
+    session = ScopedSession()
+
+    # 直接session.query(User).all()会返回User的对象列表
+    query: sqlalchemy.orm.query.Query = session.query(User)
+    users: list = query.all()
+    print(users)
+    # [User(self.id=2, self.name=&#39;Bob&#39;, self.age=17, self.addresses=[]), User(self.id=3, self.name=&#39;Alex&#39;, self.age=26, self.addresses=[]), User(self.id=4, self.name=&#39;Frank&#39;, self.age=23, self.addresses=[])]
+
+    # session.query(User.name, User.age)返回对应字段的元组列表
+    query: sqlalchemy.orm.query.Query = session.query(User.name, User.age)
+    users: list = query.all()
+    print(users)
+    # [(&#39;Bob&#39;, 17), (&#39;Alex&#39;, 26), (&#39;Frank&#39;, 23)]
+    
+    # 使用with_entities可以重新设置要查询的字段，在一些情况下可以复用构建的query
+    query: sqlalchemy.orm.query.Query = session.query(User.name)
+    query = query.with_entities(User.age)
+    users: list = query.all()
+    print(users)
+    # [(14,), (17,), (26,), (23,)]
+    
+    # 可以先查询User然后使用with_entitiesz
+    query: sqlalchemy.orm.query.Query = session.query(User)
+    users: list = query.with_entities(User.name, User.age).all()
+    print(users) 
+    # [(&#39;Jack&#39;, 14), (&#39;Bob&#39;, 17), (&#39;Alex&#39;, 26), (&#39;Frank&#39;, 23)]
+
+
+get_example2()
+
+
+def get_example3():
+    &quot;&quot;&quot;
+    通过Query构造查询，过滤条件
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    query: sqlalchemy.orm.query.Query = session.query(User)
+
+    # filter_by基于kw进行过滤，仅适用于field=value形式的过滤，没有类似于Django Model中丰富的关键字语法
+    print(query.filter_by(name=&quot;Bob&quot;).all())
+
+    # filter基于model构造查询条件，支持复杂条件
+    # 风格1：query.filter(User.name == &#39;Frank&#39;, User.age != 23).all()
+    # 风格2：query.filter(User.name.is(&#39;Frank&#39;), User.age.isnot(23)).all()
+
+    # sqlalchemy/sql/operators.py
+
+    # 相等与不等
+    print(query.filter(User.name == &#39;Frank&#39;, User.age != 23).all())
+    print(query.filter(User.name == None).all())
+    print(query.filter(User.name.is_(None)).all())
+    print(query.filter(User.name != None).all())
+    print(query.filter(User.name.isnot(None)).all())
+
+    # 模糊条件
+    print(query.filter(User.name.like(&#39;B%&#39;), User.name.notlike(&#39;%k&#39;)).all())
+
+    # in 、 not in
+    print(query.filter(User.name.in_([&#39;Bob&#39;, &#39;Frank&#39;]), ~User.age.in_([17, 13])).all())
+
+    # 与
+    print(query.filter(and_(User.name == &#39;Bob&#39;, User.age == 17)).all())
+    print(query.filter(User.name == &#39;Bob&#39;, User.age == 17).all())
+    print(query.filter(User.name == &#39;Bob&#39;).filter(User.age == 17).all())
+
+    # 或
+    print(query.filter(or_(User.name == &#39;Bob&#39;, User.age == 17)).all())
+
+    # 非
+    # not_与~等价
+    print(query.filter(not_(User.name == &#39;Bob&#39;)).all())
+    print(query.filter(~(User.name == &#39;Bob&#39;)).all())
+    print(query.filter(~and_(User.name == &#39;Bob&#39;, User.age == 13)).all())
+
+
+get_example3()
+
+
+def get_example4():
+    &quot;&quot;&quot;
+    直接执行SQL
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    print(session.execute(text(&quot;select * from t_user where id=:id&quot;), &#123;&quot;id&quot;: 4&#125;).fetchall())
+    # [(4, &#39;Frank&#39;, 23)]
+
+
+get_example4()
+
+
+def get_example5():
+    &quot;&quot;&quot;
+    多表查询
+    &quot;&quot;&quot;
+    session = ScopedSession()
+
+    # SELECT t_user.name AS t_user_name, t_address.country AS t_address_country  FROM t_user, t_address WHERE t_user.id = t_address.user_id
+    print(session.query(User.name, Address.country).filter(User.id == Address.user_id).all())
+    # SELECT t_user.name AS t_user_name, t_address.country AS t_address_country FROM t_user INNER JOIN t_address ON t_user.id = t_address.user_id
+    print(session.query(User.name, Address.country).join(Address, User.id == Address.user_id).all())
+
+    # SELECT t_user.name AS t_user_name, t_address.country AS t_address_country FROM t_user LEFT OUTER JOIN t_address ON t_user.id = t_address.user_id
+    print(session.query(User.name, Address.country).outerjoin(Address, User.id == Address.user_id).all())
+
+    # SELECT anon_1.t_user_name AS anon_1_t_user_name FROM (SELECT t_user.name AS t_user_name FROM t_user UNION SELECT t_address.country AS t_address_country FROM t_address) AS anon_1
+    print(session.query(User.name).union(session.query(Address.country)).all())
+
+
+get_example5()
+
+
+def get_example6():
+    &quot;&quot;&quot;
+    Query的结果集
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    query: sqlalchemy.orm.query.Query = session.query(User)
+
+    # 结果集中包含满足条件数据中的所有数据，没有数据则为None
+    print(query.all())
+
+    # 结果集中包含满足条件数据中的第一条数据，没有数据则为None
+    print(query.first())
+
+    # 结果集中包含恰好满足条件的唯一的一条数据，若没有查到数据或者有多条满足条件的数据都会抛出异常
+    try:
+        print(query.one())
+    except Exception as e:
+        print(e)
+
+    # 结果集中包含恰好满足条件的唯一的一条数据，若没有查到数据则为None，有多条满足条件的数据会抛出异常
+    try:
+        print(query.one_or_none())
+    except Exception as e:
+        print(e)
+
+
+get_example6()
+
+
+def get_example7():
+    &quot;&quot;&quot;
+    排序
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    query: sqlalchemy.orm.query.Query = session.query(User)
+    # 升序
+    print(query.order_by(User.id).all())
+    # 降序
+    print(query.order_by(-User.id).all())
+    # 多条件排序
+    print(query.order_by(-User.id, User.name).all())
+
+
+get_example7()
+
+
+def get_example8():
+    &quot;&quot;&quot;
+    分组
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    query: sqlalchemy.orm.query.Query = session.query(User.name)
+    print(query.group_by(User.name).all())
+
+
+get_example8()
+
+
+def get_example9():
+    &quot;&quot;&quot;
+    聚合函数
+    :return:
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    print(session.query(
+        func.max(User.age),
+        func.min(User.age),
+        func.sum(User.age),
+        func.avg(User.age),
+        func.count(User.age),
+    ).all())
+
+
+get_example9()
+
+
+def get_example10():
+    # 去重
+    session = ScopedSession()
+    print(session.query(User.name, User.age).distinct().all())
+
+
+get_example10()
+
+
+def get_example11():
+    &quot;&quot;&quot;
+    分页
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    query: sqlalchemy.orm.query.Query = session.query(User)
+
+    # 偏移分页
+    print(query.offset(1).limit(1).all())
+
+    # 使用slice()偏移分页，等价于 limit start, end - start
+    print(session.query(User).slice(1, 2).all())
+
+    # 该方法并不能在数据库层面实现分页，而是全部返回数据由Python切片
+    # session.query(User).all()[1:2]
+
+
+get_example11()
+</code></pre>
+<h3 id="事务操作分析"><a href="#事务操作分析" class="headerlink" title="事务操作分析"></a>事务操作分析</h3><pre><code class="python">def transaction_example1():
+    &quot;&quot;&quot;
+    同一个session不允许开启一个事务的时候再开启另一个事务
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    session.begin()
+    session.add(User(name=&#39;Jack&#39;))
+    session.begin()
+    session.add(User(name=&#39;Jack&#39;))
+    session.commit()
+
+
+def transaction_example2():
+    &quot;&quot;&quot;
+    两个session开启两个事务
+    &quot;&quot;&quot;
+    Session = sessionmaker(bind=engine, autobegin=False)
+    session1, session2 = Session(), Session()
+    session1.begin()
+    session1.add(User(name=&#39;Jack&#39;))
+    session2.begin()
+    session2.add(User(name=&#39;Jack&#39;))
+    session1.commit()
+    session2.commit()
+
+
+def transaction_example3():
+    &quot;&quot;&quot;
+    在同一个session中不允许先尝试开启嵌套事务然后开启一般事务
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    session.begin(nested=True)
+    session.add(User(name=&#39;Jack&#39;))
+    session.begin()
+    session.add(User(name=&#39;Jack&#39;))
+    session.commit()
+
+
+def transaction_example4():
+    &quot;&quot;&quot;
+    在同一个session中允许先尝试开启一般事务然后开启嵌套事务
+    &quot;&quot;&quot;
+    session = ScopedSession()
+    session.begin()
+    session.add(User(name=&#39;Jack&#39;))
+    session.begin(nested=True)
+    session.add(User(name=&#39;Jack&#39;))
+    session.commit()
+
+
+def transaction_example5():
+    name = &quot;transaction_example5&quot;
+    Session = sessionmaker(bind=engine, autobegin=False)
+    session1, session2 = Session(), Session()
+
+    session1.begin()
+    user = session1.query(User).filter(User.name == name).first()
+    if user:
+        raise Exception(&quot;测试前提：库中不应当有这个数据&quot;)
+    with session2.begin():
+        # session2添加该数据
+        session2.add(User(name=name))
+    user = session1.query(User).filter(User.name == name).first()
+    if not user:
+        raise Exception(
+            f&#39;测试结果：由于隔离级别&#123;session1.connection().get_isolation_level()&#125;限制，session1中查不到session2中的数据&#39;)
+    session1.commit()
+
+
+def transaction_example6():
+    &quot;&quot;&quot;
+    begin并非在数据库层面开启事务
+    &quot;&quot;&quot;
+    Session = sessionmaker(bind=engine, autobegin=False)
+    session1, session2 = Session(), Session()
+    session2.begin()
+    # begin之后执行完毕session1事务，session2的事务可以获取到数据
+    session1.begin()
+    session1.add(User(name=&#39;Jane&#39;))
+    session1.commit()
+    session2.query(User).filter(User.name == &quot;Jane&quot;).one()
+    session2.commit()
+</code></pre>
+<h2 id="Glossary"><a href="#Glossary" class="headerlink" title="Glossary"></a>Glossary</h2><h3 id="unit-of-work-pattern"><a href="#unit-of-work-pattern" class="headerlink" title="unit of work pattern"></a>unit of work pattern</h3><p>一种软件架构，持久化系统（例如object relational mapper）维护一系列对象的更改列表，并定期将所有这些待处理的更改刷新到数据库中。</p>
+<p>SQLALchemy中的Session实现了工作单元模式，使用相关方法（例如Session.add()）将object添加到Session，随后以工作单元模式风格进行持久化。</p>
+<h3 id="attached"><a href="#attached" class="headerlink" title="attached"></a>attached</h3><p>表明ORM object关联到了某一个Session</p>
+<h3 id="expire-expiring-expired"><a href="#expire-expiring-expired" class="headerlink" title="expire&#x2F;&#x2F;expiring&#x2F;expired"></a>expire&#x2F;&#x2F;expiring&#x2F;expired</h3><p>在 SQLAlchemy ORM 中，指persistent对象（有时是detached对象）中的数据被擦除时，当下次访问该对象的属性时，将发出懒加载 SQL 查询，以刷新当前正在进行的事务中存储的该对象的数据。</p>
+<h3 id="cascade"><a href="#cascade" class="headerlink" title="cascade"></a>cascade</h3><p>SQLAlchemy 中的一个术语，用于描述在特定对象上进行的 ORM 持久化操作如何扩展到与该对象直接关联的其他对象。在 SQLAlchemy 中，这些对象关联是使用 relationship() 结构配置的。 relationship() 包含一个称为 relationship.cascade 的参数，它提供了某些持久化操作如何级联的选项。</p>
+<h3 id="ORM-mapped-class"><a href="#ORM-mapped-class" class="headerlink" title="ORM mapped class"></a>ORM mapped class</h3><p>A mapped class typically refers to a single particular database table, the name of which is indicated by using the <code>__tablename__</code> class-level attribute.</p>
+<h3 id="BEGIN-implicit"><a href="#BEGIN-implicit" class="headerlink" title="BEGIN (implicit)"></a>BEGIN (implicit)</h3><blockquote>
+<p>You might have noticed the log line “BEGIN (implicit)” at the start of a transaction block. “implicit” here means that SQLAlchemy <strong>did not actually send any command</strong> to the database; it just considers this to be the start of the DBAPI’s implicit transaction. You can register <a target="_blank" rel="noopener" href="https://docs.sqlalchemy.org/en/20/core/events.html#core-sql-events">event hooks</a> to intercept this event, for example.</p>
+</blockquote>
+<ul>
+<li><strong>隐式事务</strong>：SQLAlchemy 自动处理事务的开始和结束，适用于简单的数据库操作。日志中的“BEGIN (implicit)”表示事务已开始但未发送显式命令。</li>
+<li><strong>显式事务</strong>：开发者通过显式调用事务方法begin来控制事务的生命周期，适用于需要更高控制度的复杂操作。</li>
+</ul>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/yuzaoyah/2024/05/26/Tool/Hexo/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Hexo
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">予早</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
