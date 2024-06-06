@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		PyMySQL | 
+		KQL | 
 	 
 	予早 Blog
 	</title>
@@ -155,7 +155,7 @@
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/yuzaoyah/2024/06/06/DatabaseSystem/ElasticStack/KQL/">
                      
 										    KQL
@@ -195,7 +195,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/yuzaoyah/2024/05/27/DatabaseSystem/MySQL/client/PyMySQL/">
                      
 										    PyMySQL
@@ -301,7 +301,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	PyMySQL
+	KQL
 </h1>
 
 <!-- meta -->
@@ -309,7 +309,7 @@
 	
 
 	<span>予早</span>
-	<span>2024-05-27 22:50:23</span>
+	<span>2024-06-06 23:36:28</span>
 
   <div id="article-categories">
     
@@ -327,13 +327,73 @@
 
 <!-- content -->
 <div id="article-content">
-	<p><a target="_blank" rel="noopener" href="https://pymysql.readthedocs.io/en/latest/index.html">https://pymysql.readthedocs.io/en/latest/index.html</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>pip</p>
-<pre><code>python pip install PyMySQL
+	<p>Kibana Query Language</p>
+<p>在 Kibana 中查询数据使用的语法</p>
+<ul>
+<li>KQL 查询语句中要查询的数据不区分大小写</li>
+</ul>
+<h2 id="分词匹配"><a href="#分词匹配" class="headerlink" title="分词匹配"></a>分词匹配</h2><p>查询 response 中包含 500 的结果，取决于分词情况</p>
+<p>response : 500</p>
+<p>命中结果</p>
+<pre><code>http status code is 500
 </code></pre>
-<h2 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h2><p><a target="_blank" rel="noopener" href="https://pymysql.readthedocs.io/en/latest/modules/connections.html">https://pymysql.readthedocs.io/en/latest/modules/connections.html</a></p>
-<h2 id="Cursor"><a href="#Cursor" class="headerlink" title="Cursor"></a>Cursor</h2><p>与数据库中的游标名称一样，数据获取形式有相似之处，但这两个本质是完全不同的东西</p>
-<p><a target="_blank" rel="noopener" href="https://pymysql.readthedocs.io/en/latest/modules/cursors.html">https://pymysql.readthedocs.io/en/latest/modules/cursors.html</a></p>
+<p>未命中结果</p>
+<pre><code>the port is 5001
+</code></pre>
+<p>查询 message 字段中包含 hello 或者 world 的字段</p>
+<pre><code>message : hello world
+</code></pre>
+<p>命中结果</p>
+<pre><code>hello
+HEllo
+world hello
+</code></pre>
+<p>未命中结果</p>
+<pre><code>helloworld
+</code></pre>
+<p>查询 op_record 中包含<code>user_id is 48613554</code>的结果，<code>user_id is 48613554</code>作为整体查询</p>
+<pre><code>ops_record: &quot;user_id is 48613554&quot;
+</code></pre>
+<p>命中结果</p>
+<pre><code>user_id is 48613554, user create a article which id is 666
+user_id is 48613554, user publish a article which id is 666
+</code></pre>
+<p>未命中结果</p>
+<pre><code>user_id 48613554, user delete a article which id is 666
+</code></pre>
+<h2 id="逻辑表达式"><a href="#逻辑表达式" class="headerlink" title="逻辑表达式"></a>逻辑表达式</h2><p>优先级，<code>not &gt; and &gt; or</code> ，使用括号指定优先级</p>
+<pre><code>name:jane or addr:beijing
+</code></pre>
+<pre><code>name:jane and addr:beijing or job:teacher
+</code></pre>
+<pre><code>name:jane and (addr:beijing or job:teacher)
+</code></pre>
+<pre><code>response:(200 or 404)
+</code></pre>
+<p>会查询出<code>response</code>字段中不包含<code>200</code>的记录。</p>
+<pre><code>not response:200
+</code></pre>
+<p>会查询<code>response</code>包含<code>200</code>，并且整条记录不包含<code>yes</code>的数据记录</p>
+<pre><code>response:200 and not yes
+</code></pre>
+<p>会查询response包含200，且response不包含yes的记录</p>
+<pre><code>response:(200 and not yes)
+</code></pre>
+<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>会返回所有包含<code>response</code>字段的文档对象</p>
+<pre><code>response:*
+</code></pre>
+<p>会查询<code>machine1</code>字段，<code>machine2</code>字段<code>...machinexyzabc</code>字段包含<code>hello</code>的数据记录，这里只是想表达，对于搜索的字段列，也是<strong>可以使用通配符</strong>的</p>
+<pre><code>machine*:hello
+</code></pre>
+<h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>KQL 中使用<code>\():&lt;&gt;&quot;*</code>作为语法的一部分，若要匹配的内容中包含这些字符，在不使用双引号<code>&quot;&quot;</code>的情况下，会导致语法错误，需要进行转义。</p>
+<p>查询<code>http.request.referrer</code>中包含<code>https://example.com</code>的数据，<code>:</code>需要转义。</p>
+<pre><code>http.request.referrer: https\://example.com
+</code></pre>
+<p>可以使用双引号<code>&quot;&quot;</code>指明作为一般字符串处理。</p>
+<pre><code>http.request.referrer: &quot;https://example.com&quot;
+</code></pre>
+<h2 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h2><p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/kibana/current/kuery-query.html">https://www.elastic.co/guide/en/kibana/current/kuery-query.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/UbuntuTouch/article/details/119174887">https://blog.csdn.net/UbuntuTouch/article/details/119174887</a></p>
 
 </div>
 
@@ -342,16 +402,11 @@
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/yuzaoyah/2024/05/27/DatabaseSystem/MySQL/client/Flask-SQLAlchemy/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Flask-SQLAlchemy
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/yuzaoyah/2024/05/26/Tool/Hexo/">
-                Hexo
+              <a href="/yuzaoyah/2024/05/30/WebDevelopment/%E6%8E%A5%E5%8F%A3%E8%AE%BE%E8%AE%A1/">
+                数据分页方式
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
