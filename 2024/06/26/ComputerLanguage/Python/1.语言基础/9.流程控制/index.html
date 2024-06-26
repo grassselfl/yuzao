@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Flask-SQLAlchemy | 
+		流程控制 | 
 	 
 	予早 Blog
 	</title>
@@ -155,7 +155,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/yuzaoyah/2024/06/26/ComputerLanguage/Python/1.%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/9.%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">
                      
 										    9.流程控制
@@ -232,7 +232,7 @@
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/yuzaoyah/2024/05/27/DatabaseSystem/MySQL/client/Flask-SQLAlchemy/">
                      
 										    Flask-SQLAlchemy
@@ -404,7 +404,7 @@
 	<!-- 引入正文 -->
 	<div id="content" class="content">
 		<h1 id="article-title">
-	Flask-SQLAlchemy
+	流程控制
 </h1>
 
 <!-- meta -->
@@ -412,7 +412,7 @@
 	
 
 	<span>予早</span>
-	<span>2024-05-27 22:50:23</span>
+	<span>2024-06-26 21:24:11</span>
 
   <div id="article-categories">
     
@@ -430,144 +430,192 @@
 
 <!-- content -->
 <div id="article-content">
-	<p><a target="_blank" rel="noopener" href="https://flask-sqlalchemy.palletsprojects.com/">https://flask-sqlalchemy.palletsprojects.com</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>pip</p>
-<pre><code class="shell">pip install Flask-SQLAlchemy
+	<p>顺序结构、条件结构、循环结构，顺序结构由自上而下的语句构成，条件结构由<code>if</code>、<code>match-case</code>构成，循环结构由<code>for</code>、<code>while</code>构成。</p>
+<h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><p>自上而下，自然而然。</p>
+<pre><code class="python">a, b = 1, 2
+c = 1 + b
+print(c)
 </code></pre>
-<p>版本</p>
-<pre><code class="python"># 查看版本，3.2.x废弃
-import flask_sqlalchemy
-print(flask_sqlalchemy.__version__)
-# 3.1.1
-
-# 查看版本
-from importlib import metadata
-print(metadata.version(&quot;flask-sqlalchemy&quot;))
-# 3.1.1
+<h2 id="条件结构"><a href="#条件结构" class="headerlink" title="条件结构"></a>条件结构</h2><h3 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h3><pre><code class="python">flag = 1
+if flag == 1:
+    print(&quot;A&quot;)
+elif flag == 2:
+    print(&quot;B&quot;)
+else:
+    print(&quot;C&quot;)
 </code></pre>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>flask-sqlalchemy 3.0.x以及之前的风格</p>
-<p><a target="_blank" rel="noopener" href="https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/">https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/</a></p>
-<pre><code class="python">from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+<p>一些场景下通常基于字典简化条件结构：</p>
+<pre><code>MAPPING = &#123;
+    1: &quot;A&quot;,
+    2: &quot;B&quot;,
+    # -1: &quot;C&quot;,
+&#125;
 
-from sqlalchemy import ForeignKey, create_engine
-from sqlalchemy.orm import relationship, sessionmaker
-
-app = Flask(__name__)
-app.config[&#39;SQLALCHEMY_ECHO&#39;] = True
-app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] = &#39;mysql+pymysql://root:mYsql123456_@192.168.10.128:3306/test_db&#39;
-
-db = SQLAlchemy()
-db.init_app(app)
-
-
-class User(db.Model):
-    __tablename__ = &#39;t_user&#39;
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(length=20))
-    age = db.Column(db.Integer())
-    addresses = relationship(&#39;Address&#39;)
-
-    def __repr__(self):
-        return f&quot;User(id=&#123;self.id&#125;, name=&#123;self.name&#125;, age=&#123;self.age&#125;, addresses=&#123;self.addresses&#125;)&quot;
-
-
-class Address(db.Model):
-    __tablename__ = &#39;t_address&#39;
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, ForeignKey(&#39;t_user.id&#39;))
-    country = db.Column(db.String(length=30))
-    province = db.Column(db.String(length=30))
-    city = db.Column(db.String(length=30))
-    detail = db.Column(db.String(length=150))
-
-    def __repr__(self):
-        return (f&quot;Address(id=&#123;self.id&#125;, user_id=&#123;self.user_id&#125;, country=&#123;self.country&#125;, province=&#123;self.province&#125;, &quot;
-                f&quot;city=&#123;self.city&#125;, detail=&#123;self.detail&#125;)&quot;)
-
-
-with app.app_context():
-    # 必须在flask上下文中执行
-    db.drop_all()
-    db.create_all()
-
-
-@app.get(&quot;/&quot;)
-def index():
-    # flask_sqlalchemy.query.Query是sqlalchemy.orm.query.Query的子类，增强了相关功能，例如分页
-    from flask_sqlalchemy.query import Query
-
-    # 风格一：SQLAlchemy风格
-    query: Query = db.session.query(User)
-    print(query.all())
-
-    # 风格二：Flask-SQLAlchemy风格
-    query: Query = User.query
-    print(query.all())
-
-    user_info = db.session.query(User).paginate(page=1, per_page=10, error_out=False)
-    print(user_info.total)
-    return &quot;success&quot;
-
-
-@app.route(&#39;/1&#39;)
-def example1():
-    with db.session.begin():
-        print(User.query.filter(User.name == &#39;Jane&#39;).first())
-
-    with db.session.begin_nested():
-        print(User.query.filter(User.name == &#39;Jane&#39;).first())
-
-    with db.session.begin_nested():
-        print(User.query.filter(User.name == &#39;Jane&#39;).first())
-
-    db.session.commit()
-    with db.session.begin_nested():
-        print(User.query.filter(User.name == &#39;Jane&#39;).first())
-
-    return &quot;success&quot;
-
-
-@app.route(&#39;/2&#39;)
-def example2():
-    engine = create_engine(app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;])
-    g_session = sessionmaker(bind=engine, autobegin=False)()
-
-    db.session.begin()
-    user = db.session.query(User).filter(User.name == &quot;Jack&quot;).first()
-    if user:
-        raise Exception(&#39;此时不应当查到Jack因为没有数据&#39;)
-    with g_session.begin():
-        g_session.add(User(name=&quot;Jack&quot;))
-    user = db.session.query(User).filter(User.name == &quot;Jack&quot;).first()
-    if not user:
-        raise Exception(&#39;查不到Jack是因为事务&#39;)
-    db.session.commit()
-
-    return &quot;success&quot;
-
-
-@app.route(&#39;/3&#39;)
-def example3():
-    engine = create_engine(app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;])
-    g_session = sessionmaker(bind=engine, autobegin=False)()
-
-    db.session.begin()
-    with g_session.begin():
-        g_session.add(User(name=&quot;Alex&quot;))
-    user = db.session.query(User).filter(User.name == &quot;Alex&quot;).first()
-    # begin不是在数据库层面开启事务，所以这里能查到数据
-    assert user is not None
-    db.session.commit()
-
-    return &quot;success&quot;
-
-
-if __name__ == &#39;__main__&#39;:
-    app.run(debug=True)
+flag = 1
+print(MAPPING.get(flag, &#39;C&#39;))
 </code></pre>
-<p>3.1.x的风格</p>
-<p><a target="_blank" rel="noopener" href="https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/">https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/</a></p>
+<h3 id="match-case-语句"><a href="#match-case-语句" class="headerlink" title="match-case 语句"></a>match-case 语句</h3><p>结构模式匹配，Python 3.10 引入。</p>
+<p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0634/">PEP 634 – Structural Pattern Matching: Specification</a></p>
+<p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0635/">PEP 635 – Structural Pattern Matching: Motivation and Rationale</a></p>
+<p><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0636/">PEP 636 – Structural Pattern Matching: Tutorial</a></p>
+<h4 id="字面量模式"><a href="#字面量模式" class="headerlink" title="字面量模式"></a>字面量模式</h4><pre><code class="python"># literal pattern
+def structural_pattern_matching(value):
+    match value:
+        case 1:
+            print(&quot;A&quot;)
+        case &quot;2&quot;:
+            print(&quot;B&quot;)
+        case True:
+            print(&quot;C&quot;)
+        case False:
+            print(&quot;D&quot;)
+        case None:
+            print(&quot;E&quot;)
+
+
+structural_pattern_matching(1)
+structural_pattern_matching(&quot;2&quot;)
+structural_pattern_matching(None)
+structural_pattern_matching(&quot;ABC&quot;)
+</code></pre>
+<h4 id="capture-模式"><a href="#capture-模式" class="headerlink" title="capture 模式"></a>capture 模式</h4><pre><code class="python"># capture pattern
+# guard是case的一部分，为if语句
+
+def structural_pattern_matching(value):
+    match value:
+        case &#123;&#39;sub&#39;: sub, **rest&#125;:
+            print(f&#39;&#123;sub=&#125; &#123;rest=&#125;&#39;)
+        case &#123;&#39;route&#39;: route&#125;:
+            print(f&#39;ROUTE: &#123;route&#125;&#39;)
+
+
+structural_pattern_matching(&#123;&#39;route&#39;: &#39;/auth/login&#39;&#125;)
+structural_pattern_matching(&#123;&#39;route&#39;: &#39;/auth/login&#39;, &#39;sub&#39;: &#123;&#39;a&#39;: 1&#125;&#125;)
+
+
+def go(obj):
+    match obj:
+        case &#39;go&#39;, [direction, num] if isinstance(num, int):
+            print(f&quot;go &#123;direction&#125; &#123;num&#125;&quot;)
+        case &#39;stop&#39;, *other:
+            print(&#39;stop&#39;, *other)
+
+
+go([&#39;go&#39;, [&#39;east&#39;, 3]])
+go([&#39;go&#39;, [&#39;east&#39;, &quot;3&quot;]])
+go([&#39;stop&#39;, &#39;3&#39;, &#39;2&#39;, &#39;1&#39;])
+</code></pre>
+<h4 id="as-模式"><a href="#as-模式" class="headerlink" title="as 模式"></a>as 模式</h4><pre><code class="python"># as pattern
+def structural_pattern_matching(value):
+    match value:
+        case [&quot;go&quot;, (&quot;north&quot; | &quot;south&quot; | &quot;east&quot; | &quot;west&quot;) as direction]:
+            print(f&#39;go &#123;direction&#125;&#39;)
+        case _:
+            print(&quot;B&quot;)
+
+
+structural_pattern_matching([&#39;go&#39;, &#39;west&#39;])
+</code></pre>
+<pre><code class="python"># or pattern
+def structural_pattern_matching(value):
+    match value:
+        case 0 | 1 | 2:
+            print(&#39;A&#39;)
+        case True | False:
+            print(&#39;B&#39;)
+
+
+structural_pattern_matching(1)
+</code></pre>
+<h4 id="通配符模式"><a href="#通配符模式" class="headerlink" title="通配符模式"></a>通配符模式</h4><pre><code class="python"># wildcard pattern
+# 通配符，匹配任意值，通配符匹配必须要在最后
+# SyntaxError: wildcard makes remaining patterns unreachable
+def structural_pattern_matching(value):
+    match value:
+        case 1:
+            print(&quot;A&quot;)
+        case _:
+            print(&quot;B&quot;)
+
+
+structural_pattern_matching(1)
+structural_pattern_matching(&quot;2&quot;)
+</code></pre>
+<h4 id="匹配内置类"><a href="#匹配内置类" class="headerlink" title="匹配内置类"></a>匹配内置类</h4><pre><code class="python"># Matching builtin classes
+# 可以按类型匹配
+def structural_pattern_matching(obj):
+    match obj:
+        case str() as s:
+            print(s)
+        case [0, tuple() as t]:
+            print(f&#39;&#123;t&#125;&#39;)
+        case list() as l:
+            print(l)
+
+
+structural_pattern_matching(&quot;ooo&quot;)  # ooo
+structural_pattern_matching([0, (1,)])  # (1,)
+structural_pattern_matching([(1,)])  # [(1,)]
+structural_pattern_matching([1, 2, 3])  # [1, 2, 3]
+</code></pre>
+<h4 id="匹配位置参数"><a href="#匹配位置参数" class="headerlink" title="匹配位置参数"></a>匹配位置参数</h4><pre><code class="python"># Matching positional attributes
+from dataclasses import dataclass
+
+
+class Point1:
+    __match_args__ = (&#39;x&#39;, &#39;y&#39;)
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+@dataclass
+class Point2:
+    x: int
+    y: int
+
+
+def structural_pattern_matching(value):
+    match value:
+        case Point1(x, y):
+            print(f&#39;&#123;x=&#125;, &#123;y=&#125;&#39;)
+        case Point2(x, y):
+            print(f&#39;&#123;x=&#125;, &#123;y=&#125;&#39;)
+
+
+structural_pattern_matching(Point1(1, 2))
+structural_pattern_matching(Point2(3, 4))
+</code></pre>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="for-语句"><a href="#for-语句" class="headerlink" title="for 语句"></a>for 语句</h3><pre><code class="python">for i in range(10):
+    print(i)
+else:
+    print(&quot;break跳出不执行else&quot;)
+    
+    
+for i in range(1, 10, 2):
+    print(i)
+
+print(range(1, 10, -1))
+print(range(1, 10, 2))
+for i in range(1, 10, -1):  #
+    print(i)
+
+for i in range(10, 0, -1):  # 细节处理机制
+    print(i)
+
+for i in range(-10):  # 细节处理机制
+    print(i)
+</code></pre>
+<h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><pre><code class="python">count = 10
+while count:
+    count -= 1
+    print(count)
+    # break
+    # continue
+else:
+    print(&quot;循环正常执行完毕，没有被break打断&quot;)
+</code></pre>
 
 </div>
 
@@ -576,16 +624,16 @@ if __name__ == &#39;__main__&#39;:
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/yuzaoyah/2024/05/27/ComputerLanguage/Python/1.%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/%E6%B3%A8%E9%87%8A/">
+              <a href="/yuzaoyah/2024/06/26/ComputerLanguage/Python/1.%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1.%E6%A6%82%E8%BF%B0/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  注释
+                  概述
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/yuzaoyah/2024/05/27/DatabaseSystem/MySQL/client/PyMySQL/">
-                PyMySQL
+              <a href="/yuzaoyah/2024/06/26/Tool/Git/">
+                Git
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
